@@ -2,7 +2,7 @@
   position: absolute;
   bottom: 5vh;
   left: 5vw;
-  width: 50vw;
+  width: 25vw;
   display: flex;
   flex-direction: column-reverse;
 }

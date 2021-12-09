@@ -23,19 +23,19 @@ export const NotificationsTesting = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <button onClick={handleSuccessMessage} style={{ padding: ".5rem" }}>
-        Test SuccessNotification
+        Test Success Notification
       </button>
       <br />
       <button onClick={handleInfoMessage} style={{ padding: ".5rem" }}>
-        Test InfoNotification
+        Test Info Notification
       </button>
       <br />
       <button onClick={handleWarningMessage} style={{ padding: ".5rem" }}>
-        Test WarningNotification
+        Test Warning Notification
       </button>
       <br />
       <button onClick={handleErrorMessage} style={{ padding: ".5rem" }}>
-        Test ErrorNotification
+        Test Error Notification
       </button>
     </div>
   );

@@ -1,6 +1,7 @@
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CloseIcon from "@mui/icons-material/Close";
 import React from "react";
+import "./Notification.css";
 
 export const InfoNotification: React.FC<{ message: string }> = ({
   message,
@@ -22,26 +23,25 @@ export const InfoNotification: React.FC<{ message: string }> = ({
         style={{
           color: "black",
           display: "flex",
-          flexDirection: "column",
           flex: 1,
         }}
       >
-        <div style={{ display: "flex" }}>
-          <InfoOutlinedIcon htmlColor="rgb(10, 158, 246)" />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              flex: 1,
-              margin: "0 10px",
-            }}
-          >
-            <h3>Success</h3>
-            <span>{message}</span>
-          </div>
-          <CloseIcon sx={{ color: "black" }} />
+        <InfoOutlinedIcon htmlColor="rgb(10, 158, 246)" />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flex: 1,
+            margin: "0 10px",
+          }}
+        >
+          <h3>Info</h3>
+          <span>{message}</span>
         </div>
+        <CloseIcon sx={{ color: "black" }} />
       </div>
     </div>
   );
 };
+
+export default React.memo(InfoNotification);

@@ -1,6 +1,7 @@
 import BlockOutlinedIcon from "@mui/icons-material/BlockOutlined";
 import CloseIcon from "@mui/icons-material/Close";
 import React from "react";
+import "./Notification.css";
 
 export const ErrorNotification: React.FC<{ message: string }> = ({
   message,
@@ -22,26 +23,25 @@ export const ErrorNotification: React.FC<{ message: string }> = ({
         style={{
           color: "black",
           display: "flex",
-          flexDirection: "column",
           flex: 1,
         }}
       >
-        <div style={{ display: "flex" }}>
-          <BlockOutlinedIcon sx={{ color: "red" }} />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              flex: 1,
-              margin: "0 10px",
-            }}
-          >
-            <h3>Success</h3>
-            <span>{message}</span>
-          </div>
-          <CloseIcon sx={{ color: "black" }} />
+        <BlockOutlinedIcon sx={{ color: "red" }} />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flex: 1,
+            margin: "0 10px",
+          }}
+        >
+          <h3>Error</h3>
+          <span>{message}</span>
         </div>
+        <CloseIcon sx={{ color: "black" }} />
       </div>
     </div>
   );
 };
+
+export default React.memo(ErrorNotification);
