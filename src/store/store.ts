@@ -1,7 +1,9 @@
 import { createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import { reducer } from "./reducer";
 
 export type Notification = {
+  id: string;
   message: string;
   type: "success" | "info" | "warning" | "error";
 };
@@ -14,6 +16,14 @@ const initialState: StoreState = {
   notifications: [],
 };
 
-const store = createStore(reducer, initialState);
+const configureStore = (preloadedState: StoreState) => {
+  const composedEnhancers = composeWithDevTools();
+
+  const store = createStore(reducer, preloadedState, composedEnhancers);
+
+  return store;
+};
+
+const store = configureStore(initialState);
 
 export default store;
