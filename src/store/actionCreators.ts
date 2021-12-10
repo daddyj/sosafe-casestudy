@@ -14,7 +14,14 @@ export const addWarningNotification = (message: string) => ({
   type: actionTypes.ADD_WARNING_NOTIFICATION,
   message,
 });
+
 export const addErrorNotification = (message: string) => ({
   type: actionTypes.ADD_ERROR_NOTIFICATION,
   message,
+});
+
+export const removeNotification = (id: string) => ({
+  type: actionTypes.REMOVE_NOTIFICATION,
+  message: "",
+  id,
 });

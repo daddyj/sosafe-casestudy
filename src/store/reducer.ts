@@ -59,6 +59,13 @@ export const reducer = (
           },
         ],
       };
+    case actionTypes.REMOVE_NOTIFICATION:
+      return {
+        ...state,
+        notifications: state.notifications.filter(
+          (notification) => notification.id !== action.id
+        ),
+      };
     default:
       return { ...state };
   }
