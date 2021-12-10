@@ -1,46 +1,24 @@
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import CloseIcon from "@mui/icons-material/Close";
 import React from "react";
 import "./Notification.css";
+import type { Notification as NotificationType } from "../../../store/store";
+import Notification from "./_Notification";
 
-export const InfoNotification: React.FC<{ message: string }> = ({
+export const InfoNotification: React.FC<NotificationType> = ({
+  id,
   message,
 }) => {
   return (
-    <div
+    <Notification
+      id={id}
+      title="Info"
+      message={message}
       style={{
-        display: "flex",
-        alignItems: "center",
-        padding: "0.5rem",
-        margin: "0.25rem 0",
         border: `2px solid #0A9EF6`,
         backgroundColor: "lightblue",
-        borderRadius: "0.25rem",
-        width: "100%",
       }}
-    >
-      <div
-        style={{
-          color: "black",
-          display: "flex",
-          flex: 1,
-        }}
-      >
-        <InfoOutlinedIcon htmlColor="rgb(10, 158, 246)" />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            flex: 1,
-            margin: "0 10px",
-          }}
-        >
-          <h3>Info</h3>
-          <span>{message}</span>
-        </div>
-        <CloseIcon sx={{ color: "black" }} />
-      </div>
-    </div>
+      icon={<InfoOutlinedIcon htmlColor="rgb(10, 158, 246)" />}
+    />
   );
 };
 

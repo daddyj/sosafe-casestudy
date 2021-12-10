@@ -12,15 +12,41 @@ export const Notifications: React.FC = () => {
   const notifications = useSelector((state: StoreState) => state.notifications);
 
   const getNotificationByType = (notification: Notification) => {
+    const { message, id } = notification;
+
     switch (notification.type) {
       case "success":
-        return <SuccessNotification message={notification.message} />;
+        return (
+          <SuccessNotification
+            id={id}
+            message={message}
+            type={notification.type}
+          />
+        );
       case "info":
-        return <InfoNotification message="test info" />;
+        return (
+          <InfoNotification
+            id={id}
+            message={message}
+            type={notification.type}
+          />
+        );
       case "warning":
-        return <WarningNotification message="test info" />;
+        return (
+          <WarningNotification
+            id={id}
+            message={message}
+            type={notification.type}
+          />
+        );
       case "error":
-        return <ErrorNotification message="test error" />;
+        return (
+          <ErrorNotification
+            id={id}
+            message={message}
+            type={notification.type}
+          />
+        );
       default:
         return <></>;
     }
@@ -28,8 +54,8 @@ export const Notifications: React.FC = () => {
 
   return (
     <div className="notifications-wrapper">
-      {notifications.map((notification, index) => (
-        <React.Fragment key={`${notification.type}-${index}`}>
+      {notifications.map((notification) => (
+        <React.Fragment key={notification.id}>
           {getNotificationByType(notification)}
         </React.Fragment>
       ))}

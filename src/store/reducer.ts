@@ -17,6 +17,7 @@ export const reducer = (
         notifications: [
           ...state.notifications,
           {
+            id: `${action.type}-${state.notifications.length - 1}`,
             message,
             type: "success",
           },
@@ -28,6 +29,7 @@ export const reducer = (
         notifications: [
           ...state.notifications,
           {
+            id: `${action.type}-${state.notifications.length - 1}`,
             message,
             type: "info",
           },
@@ -39,6 +41,7 @@ export const reducer = (
         notifications: [
           ...state.notifications,
           {
+            id: `${action.type}-${state.notifications.length - 1}`,
             message,
             type: "warning",
           },
@@ -50,6 +53,7 @@ export const reducer = (
         notifications: [
           ...state.notifications,
           {
+            id: `${action.type}-${state.notifications.length - 1}`,
             message,
             type: "error",
           },
