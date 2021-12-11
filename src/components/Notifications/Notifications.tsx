@@ -40,13 +40,9 @@ export const Notifications: React.FC = () => {
           />
         );
       case "error":
-        return (
-          <ErrorNotification
-            id={id}
-            message={message}
-            type={notification.type}
-          />
-        );
+        return <ErrorNotification {...notification} />;
+      case "modal":
+        return <Modal {...notification} />;
       default:
         return <></>;
     }
