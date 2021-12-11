@@ -21,8 +21,8 @@
 
 .modal-content {
   display: flex;
-  width: 42vw;
-  height: 23vh;
+  width: 75vw;
+  height: 42vh;
   justify-content: center;
   align-items: center;
   border: 1px solid;
