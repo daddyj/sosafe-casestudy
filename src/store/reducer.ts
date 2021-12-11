@@ -66,6 +66,19 @@ export const reducer = (
           (notification) => notification.id !== action.id
         ),
       };
+    case actionTypes.ADD_MODAL:
+      return {
+        ...state,
+        notifications: [
+          ...state.notifications,
+          {
+            id: `${action.type}-${state.notifications.length - 1}`,
+            type: "modal",
+            content: action.content,
+            hasBackdropClose: action.hasBackdropClose,
+          },
+        ],
+      };
     default:
       return { ...state };
   }

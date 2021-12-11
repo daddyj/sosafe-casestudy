@@ -1,12 +1,24 @@
+import React from "react";
 import { createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { reducer } from "./reducer";
 
-export type Notification = {
+type NotificationItem = {
   id: string;
-  message: string;
+  message?: string;
+  hasBackdropClose?: boolean;
   type: "success" | "info" | "warning" | "error";
 };
+
+type ModalItem = {
+  id: string;
+  message?: string;
+  content?: React.ReactElement;
+  hasBackdropClose?: boolean;
+  type: "modal";
+};
+
+export type Notification = NotificationItem | ModalItem;
 
 export type StoreState = {
   notifications: Notification[];

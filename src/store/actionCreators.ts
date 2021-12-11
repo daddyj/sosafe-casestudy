@@ -1,3 +1,4 @@
+import React from "react";
 import * as actionTypes from "./actionTypes";
 
 export const addSuccessNotification = (message: string) => ({
@@ -24,4 +25,13 @@ export const removeNotification = (id: string) => ({
   type: actionTypes.REMOVE_NOTIFICATION,
   message: "",
   id,
+});
+
+export const addModal = (
+  content: React.ReactElement,
+  hasBackdropClose: boolean = false
+): actionTypes.ModalAction => ({
+  type: actionTypes.ADD_MODAL,
+  content,
+  hasBackdropClose,
 });
