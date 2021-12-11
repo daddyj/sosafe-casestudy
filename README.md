@@ -1,46 +1,60 @@
-# Getting Started with Create React App
+# Case Study
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi,
 
-## Available Scripts
+this is my implementation for the case study `Notifications System` (see [here](./public/assets/case-study.pdf)).
 
-In the project directory, you can run:
+## Basic Concepts
 
-### `yarn start`
+The implementation is a SPA based on `create-react-app` with `typescript` template. For realising the required icons, I decided to use `Material UI Icons`. By having to import the `@mui` package dependency, in the implementation I tried to use almost only the required Icons for keeping the usage small (bundling).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Redux
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+As this should provide a notification system, that can be used within a whole connected application and developers can have easy access to it, i decided to use the `redux` store approach for controlling the notification flow.
 
-### `yarn test`
+```ts
+const { addSuccessNotification } from 'src/store/actionCreators';
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+// Example
+const MyComponent: React.FC<any> = () => {
+    const dispatch = useDispatch()
 
-### `yarn build`
+    return (
+        <button onClick={() => {
+            dispatch(addSuccessNotification(message));
+            dispatch(addInfoNotification(message));
+            dispatch(addWarningNotification(message));
+            dispatch(addErrorNotification(message));
+        }}>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    )
+}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Stackability
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I tried to use a simple approach for realising the stackability of notifications by using a `fixed` positioned container that gets rendered last and inside using the `position: relative` fact for avoiding notification overlapping each other.
 
-### `yarn eject`
+### Simple Modal
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Basic modal implementation is also given, see:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```ts
+import { addModal } from "src/store/actionCreators";
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+// Example
+const MyComponent: React.FC<any> = () => {
+    const dispatch = useDispatch()
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    return (
+        <button onClick={() => {
+            dispatch(addModal(
+                <div>
+                    Here I can place custom content
+                </div>)
+            );
+        }}>
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+    )
+}
+```
