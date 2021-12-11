@@ -12,7 +12,7 @@ export const SuccessNotification: React.FC<NotificationType> = ({
     <Notification
       id={id}
       title="Success"
-      message={message ?? ""}
+      message={message ?? <></>}
       style={{
         border: `2px solid green`,
         backgroundColor: "lightgreen",

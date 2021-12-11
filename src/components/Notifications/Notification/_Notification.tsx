@@ -6,7 +6,7 @@ import "./Notification.css";
 
 export const Notification: React.FC<{
   title: string;
-  message: string;
+  message: React.ReactElement;
   id: string;
   style: any;
   icon: React.ReactElement;
@@ -23,7 +23,7 @@ export const Notification: React.FC<{
         {icon}
         <div className="notification-content-message">
           <h3>{title}</h3>
-          <span>{message}</span>
+          {message}
         </div>
         <CloseIcon sx={{ color: "black" }} onClick={handleClose} />
       </div>

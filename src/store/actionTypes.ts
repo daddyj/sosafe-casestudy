@@ -16,7 +16,7 @@ export type NotificationActionTypes =
 
 export type NotificationAction = {
   id?: string;
-  message: string;
+  message: React.ReactElement;
   type: NotificationActionTypes;
 };
 

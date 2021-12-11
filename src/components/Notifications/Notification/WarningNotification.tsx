@@ -12,7 +12,7 @@ export const WarningNotification: React.FC<NotificationType> = ({
     <Notification
       id={id}
       title="Warning"
-      message={message ?? ""}
+      message={message ?? <></>}
       style={{
         border: `2px solid orange`,
         backgroundColor: "#f9dc84",

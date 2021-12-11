@@ -5,19 +5,19 @@ export const NotificationsTesting = () => {
   const dispatch = useDispatch();
 
   const handleSuccessMessage = () => {
-    dispatch(actionCreators.addSuccessNotification("success message"));
+    dispatch(actionCreators.addSuccessNotification(<>success message</>));
   };
 
   const handleInfoMessage = () => {
-    dispatch(actionCreators.addInfoNotification("info message"));
+    dispatch(actionCreators.addInfoNotification(<>info message</>));
   };
 
   const handleWarningMessage = () => {
-    dispatch(actionCreators.addWarningNotification("warning message"));
+    dispatch(actionCreators.addWarningNotification(<>warning message</>));
   };
 
   const handleErrorMessage = () => {
-    dispatch(actionCreators.addErrorNotification("error message"));
+    dispatch(actionCreators.addErrorNotification(<>error message</>));
   };
 
   const handleModal = () => {

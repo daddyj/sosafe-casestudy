@@ -5,14 +5,14 @@ import { reducer } from "./reducer";
 
 type NotificationItem = {
   id: string;
-  message?: string;
+  message?: React.ReactElement;
   hasBackdropClose?: boolean;
   type: "success" | "info" | "warning" | "error";
 };
 
 type ModalItem = {
   id: string;
-  message?: string;
+  message?: React.ReactElement;
   content?: React.ReactElement;
   hasBackdropClose?: boolean;
   type: "modal";
