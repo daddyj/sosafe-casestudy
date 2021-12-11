@@ -8,8 +8,6 @@ export const reducer = (
   },
   action: Action
 ): StoreState => {
-  const { message } = action;
-
   switch (action.type) {
     case actionTypes.ADD_SUCCESS_NOTIFICATION:
       return {
@@ -18,7 +16,7 @@ export const reducer = (
           ...state.notifications,
           {
             id: `${action.type}-${state.notifications.length - 1}`,
-            message,
+            message: action?.message,
             type: "success",
           },
         ],
@@ -30,7 +28,7 @@ export const reducer = (
           ...state.notifications,
           {
             id: `${action.type}-${state.notifications.length - 1}`,
-            message,
+            message: action?.message,
             type: "info",
           },
         ],
@@ -42,7 +40,7 @@ export const reducer = (
           ...state.notifications,
           {
             id: `${action.type}-${state.notifications.length - 1}`,
-            message,
+            message: action?.message,
             type: "warning",
           },
         ],
@@ -54,7 +52,7 @@ export const reducer = (
           ...state.notifications,
           {
             id: `${action.type}-${state.notifications.length - 1}`,
-            message,
+            message: action?.message,
             type: "error",
           },
         ],
@@ -63,7 +61,7 @@ export const reducer = (
       return {
         ...state,
         notifications: state.notifications.filter(
-          (notification) => notification.id !== action.id
+          (notification) => notification.id !== action?.id
         ),
       };
     case actionTypes.ADD_MODAL:

@@ -12,7 +12,7 @@ export const ErrorNotification: React.FC<NotificationType> = ({
     <Notification
       id={id}
       title="Error"
-      message={message}
+      message={message ?? ""}
       style={{
         border: `2px solid red`,
         backgroundColor: "#fc7e7e",

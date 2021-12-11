@@ -12,7 +12,7 @@ export const InfoNotification: React.FC<NotificationType> = ({
     <Notification
       id={id}
       title="Info"
-      message={message}
+      message={message ?? ""}
       style={{
         border: `2px solid #0A9EF6`,
         backgroundColor: "lightblue",
