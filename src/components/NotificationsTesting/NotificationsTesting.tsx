@@ -20,6 +20,27 @@ export const NotificationsTesting = () => {
     dispatch(actionCreators.addErrorNotification("error message"));
   };
 
+  const handleModal = () => {
+    dispatch(
+      actionCreators.addModal(
+        <button
+          onClick={() =>
+            dispatch(
+              actionCreators.addModal(
+                <button onClick={() => {}} style={{ padding: ".5rem" }}>
+                  No more..
+                </button>
+              )
+            )
+          }
+          style={{ padding: ".5rem" }}
+        >
+          and another one...
+        </button>
+      )
+    );
+  };
+
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <button onClick={handleSuccessMessage} style={{ padding: ".5rem" }}>
@@ -36,6 +57,10 @@ export const NotificationsTesting = () => {
       <br />
       <button onClick={handleErrorMessage} style={{ padding: ".5rem" }}>
         Test Error Notification
+      </button>
+      <br />
+      <button onClick={handleModal} style={{ padding: ".5rem" }}>
+        Test Modal
       </button>
     </div>
   );
