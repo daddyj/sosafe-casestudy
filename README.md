@@ -58,3 +58,9 @@ const MyComponent: React.FC<any> = () => {
     )
 }
 ```
+
+### Things to improve
+
+I have left out some approaches from the typing power of `Typescript` making things more safe and also more precise to type....maybe you find out? One thing relates `tsconfig.json` and the other refers to `type Notification` ;)
+
+Moreover a autohide could be implemented. With being able to add React Components as content for notification messages, there is a lot space for showing more options, cta to further actions for example. Also you can forward the onClose trigger for giving for Inversion of Control when using a notification.
