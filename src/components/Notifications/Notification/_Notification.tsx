@@ -18,33 +18,10 @@ export const Notification: React.FC<{
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        padding: "0.5rem",
-        margin: "0.25rem 0",
-        borderRadius: "0.25rem",
-        width: "100%",
-        ...style,
-      }}
-    >
-      <div
-        style={{
-          color: "black",
-          display: "flex",
-          flex: 1,
-        }}
-      >
+    <div className="notification-container" style={style}>
+      <div className="notification-content">
         {icon}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            flex: 1,
-            margin: "0 10px",
-          }}
-        >
+        <div className="notification-content-message">
           <h3>{title}</h3>
           <span>{message}</span>
         </div>
