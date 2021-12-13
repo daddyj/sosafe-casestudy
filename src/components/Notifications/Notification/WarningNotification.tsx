@@ -1,10 +1,10 @@
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import React from "react";
+import type { NotificationItem } from "../../../store/store";
 import "./Notification.css";
-import type { Notification as NotificationType } from "../../../store/store";
 import Notification from "./_Notification";
 
-export const WarningNotification: React.FC<NotificationType> = ({
+export const WarningNotification: React.FC<NotificationItem> = ({
   id,
   message,
 }) => {

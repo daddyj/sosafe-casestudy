@@ -1,10 +1,10 @@
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import React from "react";
-import type { Notification as NotificationType } from "../../../store/store";
+import type { NotificationItem } from "../../../store/store";
 import "./Notification.css";
 import Notification from "./_Notification";
 
-export const SuccessNotification: React.FC<NotificationType> = ({
+export const SuccessNotification: React.FC<NotificationItem> = ({
   id,
   message,
 }) => {

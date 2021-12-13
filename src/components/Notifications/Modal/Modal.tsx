@@ -3,9 +3,10 @@ import { Button } from "@mui/material";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { removeNotification } from "../../../store/actionCreators";
+import { ModalItem } from "../../../store/store";
 import "./Modal.css";
 
-const Modal: React.FC<any> = ({ id, content, hasBackdropClose }) => {
+const Modal: React.FC<ModalItem> = ({ id, content, hasBackdropClose }) => {
   const dispatch = useDispatch();
 
   return (

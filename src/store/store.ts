@@ -3,17 +3,15 @@ import { createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { reducer } from "./reducer";
 
-type NotificationItem = {
+export type NotificationItem = {
   id: string;
-  message?: React.ReactElement;
-  hasBackdropClose?: boolean;
+  message: React.ReactElement;
   type: "success" | "info" | "warning" | "error";
 };
 
-type ModalItem = {
+export type ModalItem = {
   id: string;
-  message?: React.ReactElement;
-  content?: React.ReactElement;
+  content: React.ReactElement;
   hasBackdropClose?: boolean;
   type: "modal";
 };
